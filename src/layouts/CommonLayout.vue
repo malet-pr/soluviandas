@@ -7,26 +7,10 @@
     >
       <q-toolbar>
         <q-toolbar-title class="flex justify-between">
+          <div class="">
+            <h4>{{ $t('appTitle') }}</h4>
+          </div>
           <div class="q-pa-md">
-            <q-icon
-              name="light_mode"
-              color="black"
-              size="30px"
-            />
-            <q-toggle
-              v-model="mode"
-              size="lg"
-              color="white"
-              keep-color
-              @update:model-value="setMode"
-            />
-            <q-icon
-              name="dark_mode"
-              color="black"
-              size="30px"
-            />
-            <!--           </div>
-          <div class="q-pa-md"> -->
             <q-chip
               color="secondary"
               text-color="black"
@@ -47,9 +31,23 @@
             >
               ESPAÑOL
             </q-chip>
-          </div>
-          <div class="">
-            <h4>MAIN APP</h4>
+            <q-icon
+              name="light_mode"
+              color="black"
+              size="30px"
+            />
+            <q-toggle
+              v-model="mode"
+              size="lg"
+              color="white"
+              keep-color
+              @update:model-value="setMode"
+            />
+            <q-icon
+              name="dark_mode"
+              color="black"
+              size="30px"
+            />
           </div>
         </q-toolbar-title>
       </q-toolbar>

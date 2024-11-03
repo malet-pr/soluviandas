@@ -1,4 +1,5 @@
 export default {
+  appTitle: 'SOLUVIANDAS',
   pages: {
     label1: 'Page One',
     label2: 'Page Two',
