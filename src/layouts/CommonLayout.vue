@@ -6,48 +6,15 @@
       class="bg-primary text-white"
     >
       <q-toolbar>
-        <q-toolbar-title class="flex justify-between">
-          <div class="">
-            <h4>{{ $t('appTitle') }}</h4>
-          </div>
-          <div class="q-pa-md">
-            <q-chip
-              color="secondary"
-              text-color="black"
-              size="12px"
-              label="ENGLISH"
-            />
-            <q-toggle
-              v-model="lang"
-              size="lg"
-              color="white"
-              keep-color
-              @update:model-value="setLang"
-            />
-            <q-chip
-              color="secondary"
-              text-color="black"
-              size="12px"
-            >
-              ESPAÑOL
-            </q-chip>
-            <q-icon
-              name="light_mode"
-              color="black"
-              size="30px"
-            />
-            <q-toggle
-              v-model="mode"
-              size="lg"
-              color="white"
-              keep-color
-              @update:model-value="setMode"
-            />
-            <q-icon
-              name="dark_mode"
-              color="black"
-              size="30px"
-            />
+        <q-toolbar-title class="row">
+          <h4>{{ $t('appTitle') }}</h4>
+          <q-space />
+          <div class="columns">
+            <SettingsComponent />
+            <q-btn unelevated class="q-pt-sm"
+            icon="local_grocery_store" size="sm"
+            @click="handleShoppingCart"
+            style="width: 50px;" />
           </div>
         </q-toolbar-title>
       </q-toolbar>
@@ -83,26 +50,10 @@
 </template>
 
 <script setup>
-import { useQuasar } from 'quasar'
-import { ref } from 'vue'
-import { useI18n } from 'vue-i18n'
+import SettingsComponent from 'src/components/SettingsComponent.vue'
 
-const $q = useQuasar()
-const mode = ref(true)
-
-const { locale } = useI18n()
-const lang = ref(true)
-
-const setMode = () => {
-  $q.dark.toggle()
-}
-
-const setLang = () => {
-  if (lang.value) {
-    locale.value = 'es-AR'
-  } else {
-    locale.value = 'en-US'
-  }
+const handleShoppingCart = () => {
+  alert('manejar carrito')
 }
 
 </script>

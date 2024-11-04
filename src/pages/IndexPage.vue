@@ -1,27 +1,27 @@
 <template>
   <q-page class="flex flex-center">
-    <div class="column items-center justify-center">
+    <div class="column items-center">
       <div>
-        <h3 class="">Soluviandas</h3>
+        <h3 class="">SOLUVIANDAS</h3>
       </div>
-      <div class="q-gutter-xl">
+      <div class="q-my-lg">
         <q-btn
           color="primary"
           rounded
           size="lg"
           @click="handleLogin"
-        >
-          INGRESAR
-        </q-btn>
+          label="INGRESAR"
+        />
+      </div>
+      <div class="q-my-lg">
         <q-btn
           color="primary"
           outline
           rounded
           size="lg"
           @click="handleRegister"
-        >
-          REGISTRARSE
-        </q-btn>
+          label="REGISTRARSE"
+        />
       </div>
     </div>
 
@@ -64,7 +64,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-const router = useRouter();
+const router = useRouter()
 const sepia = ref('sepia(90%)')
 const login = ref(false)
 const register = ref(false)

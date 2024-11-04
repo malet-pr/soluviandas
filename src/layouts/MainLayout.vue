@@ -8,8 +8,4 @@
 
 <script setup>
 
-defineOptions({
-  name: 'MainLayout'
-})
-
 </script>
