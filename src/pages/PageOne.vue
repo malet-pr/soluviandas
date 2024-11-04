@@ -1,42 +1,81 @@
 <template>
-  <div class="row justify-center">
-    <div class="col-8 q-my-lg">
+  <div class="row q-pa-lg justify-center">
+    <div class="col-8 q-my-xl">
       <q-carousel
+        v-model="title"
         swipeable
         animated
-        v-model="slide"
-        ref="carousel"
         infinite
+        vertical
+        transition-prev="slide-down"
+        transition-next="slide-up"
+        control-color="white"
+        padding
+        arrows
+        height="22rem"
+        class="bg-primary text-black shadow-3 rounded-borders"
       >
-        <q-carousel-slide :name="1" img-src="https://cdn.quasar.dev/img/mountains.jpg" />
-        <q-carousel-slide :name="2" img-src="https://cdn.quasar.dev/img/parallax1.jpg" />
-        <q-carousel-slide :name="3" img-src="https://cdn.quasar.dev/img/parallax2.jpg" />
-        <q-carousel-slide :name="4" img-src="https://cdn.quasar.dev/img/quasar.jpg" />
-
-        <template v-slot:control>
-          <q-carousel-control
-            position="bottom-right"
-            :offset="[18, 18]"
-            class="q-gutter-xs"
+          <q-carousel-slide
+            v-for="card in cardList"
+            :key="card.id"
+            :name="card.id"
+            class="column no-wrap flex-center"
           >
-            <q-btn
-              push round dense color="orange" text-color="black" icon="arrow_left"
-              @click="$refs.carousel.previous()"
-            />
-            <q-btn
-              push round dense color="orange" text-color="black" icon="arrow_right"
-              @click="$refs.carousel.next()"
-            />
-          </q-carousel-control>
-        </template>
+            <q-card class="bg-white text-black">
+              <q-card-section>
+                <div class="text-h6">
+                  {{ card.title }}
+                </div>
+              </q-card-section>
+              <q-card-section> {{ card.desc }} </q-card-section>
+              <q-separator color="primary" inset />
+              <q-card-actions align="between">
+                <q-btn
+                  flat
+                  icon="checklist_rtl"
+                  color="primary"
+                  @click="adjust"
+                />
+                <q-btn
+                  flat
+                  icon="add_shopping_cart"
+                  color="primary"
+                  @click="select"
+                />
+              </q-card-actions>
+            </q-card>
+          </q-carousel-slide>
       </q-carousel>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { useQuasar } from 'quasar'
+import { computed, ref } from 'vue'
 
-const slide = ref(1)
+const { t } = useI18n()
+const $q = useQuasar()
+
+const title = ref(1)
+
+function alert (tit, msg) {
+  $q.dialog({
+    title: tit,
+    message: msg
+  })
+}
+
+const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+const adjust = () => alert(t('selectDialog.title'), t('selectDialog.message'))
+const select = () => alert(t('addDialog.title'), t('addDialog.message'))
+
+const cardList = [
+  { id: 1, title: computed(() => t('plans.plan7')), desc: lorem },
+  { id: 2, title: computed(() => t('plans.plan14')), desc: lorem },
+  { id: 3, title: computed(() => t('plans.plan21')), desc: lorem },
+  { id: 4, title: computed(() => t('plans.plan28')), desc: lorem }
+]
 
 </script>

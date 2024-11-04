@@ -31,10 +31,6 @@
           to="/page3"
           :label="$t('pages.label3')"
         />
-        <q-route-tab
-          to="/page4"
-          :label="$t('pages.label4')"
-        />
       </q-tabs>
     </q-header>
     <q-page-container>

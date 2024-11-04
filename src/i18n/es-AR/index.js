@@ -1,9 +1,9 @@
 export default {
   appTitle: 'SALUVIANDAS',
   pages: {
-    label1: 'Página Uno',
-    label2: 'Página Dos',
-    label3: 'Página Tres',
+    label1: 'Hipertensión',
+    label2: 'Diabetes',
+    label3: 'Celiaquía',
     label4: 'Página Cuatro'
   },
   settings: {
