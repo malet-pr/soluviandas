@@ -12,13 +12,13 @@
           <div class="columns">
             <SettingsComponent />
             <q-btn unelevated class="q-pt-sm"
-            icon="local_grocery_store" size="sm"
+            icon="local_grocery_store" size="md"
             @click="handleShoppingCart"
             style="width: 50px;" />
           </div>
         </q-toolbar-title>
       </q-toolbar>
-      <q-tabs class="q-px-md">
+      <q-tabs class="q-px-sm">
         <q-route-tab
           to="/page1"
           :label="$t('pages.label1')"
@@ -31,6 +31,10 @@
           to="/page3"
           :label="$t('pages.label3')"
         />
+        <q-route-tab
+          to="/page4"
+          :label="$t('pages.label4')"
+        />
       </q-tabs>
     </q-header>
     <q-page-container>
@@ -38,11 +42,11 @@
     </q-page-container>
     <q-footer
       bordered
-      class="bg-grey-8 text-white"
+      class="bg-grey-8 text-white text-center"
     >
       <q-toolbar>
         <q-toolbar-title>
-          <div>CopyRight, etc</div>
+          <div>Copyright, etc</div>
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>
@@ -51,9 +55,21 @@
 
 <script setup>
 import SettingsComponent from 'src/components/SettingsComponent.vue'
+import { useQuasar } from 'quasar'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+const $q = useQuasar()
+
+function alert (tit, msg) {
+  $q.dialog({
+    title: tit,
+    message: msg
+  })
+}
 
 const handleShoppingCart = () => {
-  alert('manejar carrito')
+  alert(t('cartDialog.title'), t('cartDialog.message'))
 }
 
 </script>

@@ -3,13 +3,20 @@
     <q-dialog :backdrop-filter="sepia">
       <q-card style="width: 700px; max-width: 80vw;">
         <q-card-section class="row items-center q-pb-none text-h4">
-          Log In
+          Ingresar
         </q-card-section>
         <q-card-section class="text-h6">
-          Acá se solicita usuario y contraseña para ingresar a la app.
+          Acá se preguntará si quiere loguearse o si quiere ingresar como invitado.
+          Si elije entrar solo como invitado se dará acceso inmediato.
+          Si elije loguearse se hará visible el formulario y botón de login.
         </q-card-section>
         <q-card-actions align="right">
-          <q-btn flat label="Close" color="primary" @click="handleClick" />
+          <q-btn
+            flat
+            label="Close"
+            color="primary"
+            @click="handleClick"
+          />
         </q-card-actions>
       </q-card>
     </q-dialog>

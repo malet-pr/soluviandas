@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pt-lg">
+  <div class="q-pt-md">
     <q-btn-dropdown
       unelevated
       color="primary"
@@ -9,14 +9,14 @@
       <div class="row no-wrap q-px-md q-py-lg">
         <div class="column">
           <div class="row items-center no-wrap">
-            <img src="/united-states.jpg" size="20px">
+            <img src="/icons/united-states.jpg" size="20px">
             <q-toggle
               v-model="lang"
               size="sm"
               color="primary"
               @update:model-value="setLang"
             />
-            <img src="/argentina.jpg" size="20px">
+            <img src="/icons/argentina.jpg" size="20px">
           </div>
           <div class="row items-center no-wrapq-px-md q-py-lg">
             <q-icon

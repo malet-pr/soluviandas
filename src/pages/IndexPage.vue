@@ -2,7 +2,7 @@
   <q-page class="flex flex-center">
     <div class="column items-center">
       <div>
-        <h3 class="">SOLUVIANDAS</h3>
+        <h3 class="">SALUVIANDAS</h3>
       </div>
       <div class="q-my-lg">
         <q-btn
@@ -27,12 +27,14 @@
 
     <div class="q-pa-md q-gutter-sm">
       <q-dialog v-model="login" :backdrop-filter="sepia">
-        <q-card style="width: 700px; max-width: 80vw;">
+        <q-card style="width: 500px; max-width: 50vw;">
           <q-card-section class="row items-center q-pb-none text-h4">
             Log In
           </q-card-section>
           <q-card-section class="text-h6">
-            Acá se solicita usuario y contraseña para ingresar a la app.
+            Acá se preguntará si quiere loguearse o si quiere ingresar como invitado.
+            Si elije entrar solo como invitado se dará acceso inmediato.
+            Si elije loguearse se hará visible el formulario y botón de login.
           </q-card-section>
           <q-card-actions align="right">
             <q-btn flat label="Close" color="primary" @click="handleClick" />
@@ -43,7 +45,7 @@
 
     <div class="q-pa-md q-gutter-sm">
       <q-dialog v-model="register" :backdrop-filter="sepia">
-        <q-card style="width: 700px; max-width: 80vw;">
+        <q-card style="width: 500px; max-width: 50vw;">
           <q-card-section class="row items-center q-pb-none text-h4">
             Registro
           </q-card-section>
