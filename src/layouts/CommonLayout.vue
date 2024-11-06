@@ -36,15 +36,18 @@
     <q-page-container>
       <router-view />
     </q-page-container>
-    <q-footer
-      bordered
-      class="bg-grey-8 text-white text-center"
-    >
-      <q-toolbar>
-        <q-toolbar-title>
-          <div>Copyright, etc</div>
-        </q-toolbar-title>
-      </q-toolbar>
+    <q-footer>
+    <q-toolbar class="bg-grey-8 text-white">
+      <q-toolbar-title>
+        <q-icon name="fa-regular fa-copyright" size="sm" class="q-pa-xs" />
+        NutriTech - 2024
+      </q-toolbar-title>
+      <q-space />
+      <q-icon name="fa-regular fa-envelope" color="yellow" size="sm" class="q-pa-sm" @click="() => alert('Email', 'CONTACTO')"/>
+        <q-icon name="fa-brands fa-whatsapp" color="green" size="sm" class="q-pa-sm" @click="() => alert('Whatsapp', 'CONTACTO')"/>
+      <q-icon name="fa-brands fa-facebook" color="blue" size="sm" class="q-pa-sm" @click="() => alert('Facebook', 'CONTACTO')"/>
+      <q-icon name="fa-brands fa-instagram" color="red" size="sm" class="q-pa-sm" @click="() => alert('Instagram', 'CONTACTO')"/>
+    </q-toolbar>
     </q-footer>
   </q-layout>
 </template>
