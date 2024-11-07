@@ -1,24 +1,14 @@
 <template>
-  <div class="q-pt-md">
+  <div>
     <q-btn-dropdown
       unelevated
       color="primary"
       icon="settings"
-      size="10px"
+      size="md"
     >
       <div class="row no-wrap q-px-md q-py-lg">
         <div class="column">
-          <div class="row items-center no-wrap">
-            <img src="/icons/united-states.jpg" size="20px">
-            <q-toggle
-              v-model="lang"
-              size="sm"
-              color="primary"
-              @update:model-value="setLang"
-            />
-            <img src="/icons/argentina.jpg" size="20px">
-          </div>
-          <div class="row items-center no-wrapq-px-md q-py-lg">
+          <div class="row items-center no-wrapq-px-md q-py-sm">
             <q-icon
               name="light_mode"
               color="orange"
@@ -35,6 +25,16 @@
               color="orange"
               size="20px"
             />
+          </div>
+          <div class="row items-center no-wrap q-py-sm">
+            <img src="/icons/united-states.jpg" size="20px">
+            <q-toggle
+              v-model="lang"
+              size="sm"
+              color="primary"
+              @update:model-value="setLang"
+            />
+            <img src="/icons/argentina.jpg" size="20px">
           </div>
         </div>
 

@@ -32,9 +32,7 @@
             Log In
           </q-card-section>
           <q-card-section class="text-h6">
-            Acá se preguntará si quiere loguearse o si quiere ingresar como invitado.
-            Si elije entrar solo como invitado se dará acceso inmediato.
-            Si elije loguearse se hará visible el formulario y botón de login.
+            Se permite loguear con usuario y contraseña o ingresar como invitado.
           </q-card-section>
           <q-card-actions align="right">
             <q-btn flat label="Close" color="primary" @click="handleClick" />

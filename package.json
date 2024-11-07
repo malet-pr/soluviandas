@@ -1,8 +1,8 @@
 {
-  "name": "soluviandas",
+  "name": "saluviandas",
   "version": "0.0.1",
   "description": "Prototipo para la entrega final",
-  "productName": "Soluviandas App",
+  "productName": "Saluviandas App",
   "author": "Nuria Malet Quintar <maletq.pr@gmail.com>",
   "type": "module",
   "private": true,
