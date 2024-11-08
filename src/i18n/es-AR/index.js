@@ -1,10 +1,11 @@
+import ShoppingCart from "src/components/ShoppingCart.vue";
+
 export default {
   appTitle: 'SALUVIANDAS',
   pages: {
     label1: 'Hipertensión',
     label2: 'Diabetes',
-    label3: 'Celiaquía',
-    label4: 'Página Cuatro'
+    label3: 'Celiaquía'
   },
   settings: {
     title: 'Ajustes',
@@ -28,7 +29,21 @@ export default {
     plan14: 'Plan 14 comidas',
     plan21: 'Plan 21 comidas',
     plan28: 'Plan 28 comidas'
-  }
-
+  },
+  meals: {
+    meal1: 'Arroz con calamares',
+    meal2: 'Guiso de lentejas',
+    meal3: 'Pechuga con ensalada'
+  },
+  emptyCart: 'Tu carrito está vacío',
+  moveToPay: 'Pagar',
+  leaveCart: 'Salir',
+  shoppingCart: 'CARRITO',
+  cartMsg: 'Pagos',
+  cartPayment: 'Lleva a una pantalla de pagos',
+  Email: {message: 'Contactar por email'},
+  WhatsApp: {message: 'Contactar por whatsapp'},
+  Facebook: {message: 'Visitar Facebook de Saluviandas'},
+  Instagram: {message: 'Visitar Instagram de Saluviandas'}
 
 }

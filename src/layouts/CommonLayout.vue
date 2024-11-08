@@ -7,18 +7,18 @@
     >
       <q-toolbar>
         <q-toolbar-title class="row">
-          <h4>{{ $t('appTitle') }}</h4>
+          {{ $t('appTitle') }}
           <q-space />
-          <div class="columns">
+          <div class="row items-center justify-end">
             <SettingsComponent />
-            <q-btn unelevated class="q-pt-sm"
+            <q-btn unelevated class="q-px-xs q-mr-sm"
             icon="local_grocery_store" size="md"
             @click="handleShoppingCart"
-            style="width: 50px;" />
+            style="width: 10px;" />
           </div>
         </q-toolbar-title>
       </q-toolbar>
-      <q-tabs class="q-px-sm">
+      <q-tabs class="q-pa-sm">
         <q-route-tab
           to="/page1"
           :label="$t('pages.label1')"
@@ -35,18 +35,22 @@
     </q-header>
     <q-page-container>
       <router-view />
+      <q-dialog v-model="showCart" :backdrop-filter="sepia">
+        <ShoppingCart />
+      </q-dialog>
     </q-page-container>
     <q-footer>
-    <q-toolbar class="bg-grey-8 text-white">
+    <q-toolbar class="bg-grey text-white">
       <q-toolbar-title>
+      <span>
         <q-icon name="fa-regular fa-copyright" size="sm" class="q-pa-xs" />
-        NutriTech - 2024
+        NutriTech-2024
+      </span>
       </q-toolbar-title>
-      <q-space />
-      <q-icon name="fa-regular fa-envelope" color="yellow" size="sm" class="q-pa-sm" @click="() => alert('Email', 'CONTACTO')"/>
-        <q-icon name="fa-brands fa-whatsapp" color="green" size="sm" class="q-pa-sm" @click="() => alert('Whatsapp', 'CONTACTO')"/>
-      <q-icon name="fa-brands fa-facebook" color="blue" size="sm" class="q-pa-sm" @click="() => alert('Facebook', 'CONTACTO')"/>
-      <q-icon name="fa-brands fa-instagram" color="red" size="sm" class="q-pa-sm" @click="() => alert('Instagram', 'CONTACTO')"/>
+      <q-icon name="fa-regular fa-envelope" color="brown" size="sm" class="q-pa-xs" @click="handleContact('Email')"/>
+      <q-icon name="fa-brands fa-whatsapp" color="green-8" size="sm" class="q-pa-xs" @click="handleContact('WhatsApp')"/>
+      <q-icon name="fa-brands fa-facebook" color="blue-8" size="sm" class="q-pa-xs" @click="handleContact('Facebook')"/>
+      <q-icon name="fa-brands fa-instagram" color="red-8" size="sm" class="q-pa-xs" @click="handleContact('Instagram')"/>
     </q-toolbar>
     </q-footer>
   </q-layout>
@@ -54,11 +58,15 @@
 
 <script setup>
 import SettingsComponent from 'src/components/SettingsComponent.vue'
+import ShoppingCart from 'src/components/ShoppingCart.vue'
 import { useQuasar } from 'quasar'
+import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 const $q = useQuasar()
+const sepia = ref('sepia(90%)')
+const showCart = ref(false)
 
 function alert (tit, msg) {
   $q.dialog({
@@ -67,8 +75,12 @@ function alert (tit, msg) {
   })
 }
 
+const handleContact = (media) => {
+  alert(media, t(media + '.message'))
+}
+
 const handleShoppingCart = () => {
-  alert(t('cartDialog.title'), t('cartDialog.message'))
+  showCart.value = !showCart.value
 }
 
 </script>

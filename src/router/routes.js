@@ -13,8 +13,7 @@ const routes = [
     children: [
       { path: '/page1', component: () => import('pages/PageOne.vue') },
       { path: '/page2', component: () => import('pages/PageTwo.vue') },
-      { path: '/page3', component: () => import('pages/PageThree.vue') },
-      { path: '/page4', component: () => import('pages/PageFour.vue') }
+      { path: '/page3', component: () => import('pages/PageThree.vue') }
     ]
   },
 
