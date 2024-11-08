@@ -12,6 +12,6 @@
     "typescript",
     "vue"
   ],
-  "java.configuration.updateBuildConfiguration": "interactive",
+  "java.configuration.updateBuildConfiguration": "disabled",
   "jdk.advanced.disable.nbjavac": false
 }

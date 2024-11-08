@@ -1,4 +1,4 @@
-package org.acme.soluviandas;
+package org.acme.saluviandas;
 
 import com.getcapacitor.BridgeActivity;
 
