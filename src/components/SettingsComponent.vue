@@ -26,16 +26,27 @@
               size="20px"
             />
           </div>
-          <div class="row items-center no-wrap q-py-sm">
-            <img src="/icons/united-states.jpg" size="20px">
-            <q-toggle
-              v-model="lang"
-              size="sm"
-              color="primary"
-              @update:model-value="setLang"
-            />
-            <img src="/icons/argentina.jpg" size="20px">
-          </div>
+          <q-btn-dropdown
+            class="q-mt-md"
+            flat
+            color="primary"
+            :label="$t('language')"
+            v-model="showLanguages"
+          >
+            <div class="q-pa-lg">
+              <q-option-group v-show="showLanguages"
+                v-model="selection"
+                :options="language"
+                color="primary"
+                @update:model-value="switchLanguage"
+                name="lang_sel"
+              >
+              <template #label="lang">
+                  {{ lang.label }}
+              </template>
+              </q-option-group>
+            </div>
+          </q-btn-dropdown>
         </div>
 
         <q-separator
@@ -48,11 +59,9 @@
           <q-avatar size="45px">
             <img src="https://cdn.quasar.dev/img/boy-avatar.png">
           </q-avatar>
-
           <div class="text-subtitle1 q-mt-md q-mb-xs">
             {{ $t('settings.name') }}
           </div>
-
           <q-btn
             v-close-popup
             color="primary"
@@ -62,6 +71,7 @@
             @click="router.push('/')"
           />
         </div>
+
       </div>
     </q-btn-dropdown>
   </div>
@@ -69,24 +79,25 @@
 
 <script setup>
 import { useQuasar } from 'quasar'
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
-
 const $q = useQuasar()
 const mode = ref(true)
-
 const { locale } = useI18n()
-const lang = ref(true)
+const selection = ref(locale.value)
+const showLanguages = ref(false)
 
-const setLang = () => {
-  if (lang.value) {
-    locale.value = 'es-AR'
-  } else {
-    locale.value = 'en-US'
-  }
+const language = [
+  {value: 'es-AR', label: 'Español'},
+  {value: 'en-US', label: 'English'}
+]
+
+const switchLanguage = (value) => {
+  locale.value = value
+  showLanguages.value = false
 }
 
 </script>

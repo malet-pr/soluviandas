@@ -1,5 +1,6 @@
 export default {
   appTitle: 'SALUVIANDAS',
+  language: 'Language',
   pages: {
     label1: 'High Blood Pressure',
     label2: 'Diabetes',

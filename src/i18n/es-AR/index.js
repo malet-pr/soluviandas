@@ -2,6 +2,7 @@ import ShoppingCart from "src/components/ShoppingCart.vue";
 
 export default {
   appTitle: 'SALUVIANDAS',
+  language: 'Idioma',
   pages: {
     label1: 'Hipertensión',
     label2: 'Diabetes',
