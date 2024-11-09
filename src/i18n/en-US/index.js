@@ -43,6 +43,10 @@ export default {
   Email: {message: 'Reach us by email'},
   WhatsApp: {message: 'Reach us by whatsapp'},
   Facebook: {message: 'Visit Saluviandas Facebook'},
-  Instagram: {message: 'Visit Saluviandas Instagram'}
-
+  Instagram: {message: 'Visit Saluviandas Instagram'},
+  addProductMessage: 'Products will be added to the shopping cart',
+  selectProducts: {
+    ok: 'add',
+    nok: 'quit'
+  }
 }

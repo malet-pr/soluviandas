@@ -59,6 +59,21 @@ module.exports = {
     'one-var': 'off',
     'no-void': 'off',
     'multiline-ternary': 'off',
+    'vue/html-indent': 'off',
+    'vue/html-self-closing': 'off',
+    'vue/max-attributes-per-line': 'off',
+    'indent': 'off',
+    'vue/attributes-order': 'off',
+    'vue/singleline-html-element-content-newline': 'off',
+    'no-multiple-empty-lines': 'off',
+    'vue/multiline-html-element-content-newline':'off',
+    'vue/html-closing-bracket-spacing':'off',
+    'vue/html-closing-bracket-newline':'off',
+    'vue/first-attribute-linebreak':'off',
+    'object-curly-spacing':'off',
+    'no-unused-vars':'off',
+    'quotes': 'off',
+    'semi': 'off',
 
     'import/first': 'off',
     'import/named': 'error',
@@ -70,6 +85,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
 
     'prefer-promise-reject-errors': 'off',
+    'no-return-assign': 'off',
 
     // allow debugger during development only
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'

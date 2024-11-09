@@ -49,29 +49,34 @@
         </q-carousel>
       </div>
     </div>
+    <q-dialog v-model="showAddProduct" :backdrop-filter="sepia">
+      <AddMeals />
+    </q-dialog>
+    <q-dialog v-model="showSelectProducts" :backdrop-filter="sepia">
+      <SelectMeals />
+    </q-dialog>
   </div>
 </template>
 
 <script setup>
 import { useI18n } from 'vue-i18n'
-import { useQuasar } from 'quasar'
 import { computed, ref } from 'vue'
+import AddMeals from 'src/components/AddMeals.vue';
+import SelectMeals from 'src/components/SelectMeals.vue';
 
 const { t } = useI18n()
-const $q = useQuasar()
-
+const sepia = ref('sepia(90%)')
+const showAddProduct = ref(false)
+const showSelectProducts = ref(false)
 const title = ref(1)
 
-function alert (tit, msg) {
-  $q.dialog({
-    title: tit,
-    message: msg
-  })
-}
-
 const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-const adjust = () => alert(t('selectDialog.title'), t('selectDialog.message'))
-const select = () => alert(t('addDialog.title'), t('addDialog.message'))
+const adjust = () => {
+  showSelectProducts.value = true
+}
+const select = () => {
+  showAddProduct.value = true
+}
 
 const cardList = [
   { id: 1, title: computed(() => t('plans.plan7')), desc: lorem },

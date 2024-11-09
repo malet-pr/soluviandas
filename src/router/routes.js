@@ -1,7 +1,7 @@
 const routes = [
   {
     path: '',
-    component: () => import('layouts/MainLayout.vue'),
+    component: () => import('src/layouts/StartLayout.vue'),
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') }
     ]
@@ -9,7 +9,7 @@ const routes = [
 
   {
     path: '/app',
-    component: () => import('layouts/CommonLayout.vue'),
+    component: () => import('src/layouts/MainLayout.vue'),
     children: [
       { path: '/page1', component: () => import('pages/PageOne.vue') },
       { path: '/page2', component: () => import('pages/PageTwo.vue') },
