@@ -47,7 +47,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import '../assets/botIcon.ico'
 import { useQuasar } from 'quasar'
 import { useI18n } from 'vue-i18n'
 
