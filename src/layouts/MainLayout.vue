@@ -35,6 +35,7 @@
     </q-header>
     <q-page-container>
       <router-view />
+      <chatbot-component />
       <q-dialog v-model="showCart" :backdrop-filter="sepia">
         <ShoppingCart />
       </q-dialog>
@@ -58,6 +59,7 @@
 
 <script setup>
 import SettingsComponent from 'src/components/SettingsComponent.vue'
+import ChatbotComponent from 'components/ChatbotComponent.vue'
 import ShoppingCart from 'src/components/ShoppingCart.vue'
 import { useQuasar } from 'quasar'
 import { ref } from 'vue'
@@ -84,3 +86,4 @@ const handleShoppingCart = () => {
 }
 
 </script>
+

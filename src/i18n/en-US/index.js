@@ -1,5 +1,6 @@
 export default {
   appTitle: 'SALUVIANDAS',
+  chatbotTitle: 'Get help',
   language: 'Language',
   pages: {
     label1: 'High Blood Pressure',

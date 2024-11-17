@@ -2,6 +2,7 @@ import ShoppingCart from "src/components/ShoppingCart.vue";
 
 export default {
   appTitle: 'SALUVIANDAS',
+  chatbotTitle: 'Obtén ayuda',
   language: 'Idioma',
   pages: {
     label1: 'Hipertensión',
